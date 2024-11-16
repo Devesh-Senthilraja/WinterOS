@@ -1,0 +1,8 @@
+PyQt5
+PyQtWebEngine
+vlc
+opencv-python
+googletrans==4.0.0-rc1
+textblob
+folium
+requests
