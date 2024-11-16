@@ -60,8 +60,8 @@ All the modules are organized into separate classes within the script. You can m
 proxima/
 ├── Program.py
 ├── Icons/                # Images, icons, and other assets used in the UI
-├── Photos/               # Custom module test benches for different functionalities
 └── requirements.txt      # List of dependencies
+└── ...
 ```
 
 ## 📦 Dependencies
