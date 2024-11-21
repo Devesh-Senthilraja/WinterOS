@@ -1237,7 +1237,7 @@ class Weather(QWidget):
 
     def getWeather(self):
         cityName = self.cityValue.text()
-        weatherURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=ec44b8c08ba22cabb5c57e7ba03f7851'
+        weatherURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid='
         try:
             weatherInfo = requests.get(weatherURL).json()
 
@@ -1480,7 +1480,7 @@ class News(QWidget):
         self.setLayout(mainLayout)
 
     def getNews(self, type):
-        newsURL = f"http://newsapi.org/v2/top-headlines?country=us&category={type}&apiKey=ff3ba8e42f024772a4424526fd246095"
+        newsURL = f"http://newsapi.org/v2/top-headlines?country=us&category={type}&apiKey="
         self.newsOutput.clear()
         try:
             newsInfo = (requests.get(newsURL).json())['articles']
