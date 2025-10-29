@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WinterOS</title>
+  <meta name="description" content="WinterOS (formerly Proxima) is a minimal, UI‑first Linux project. Today you can run the open‑source PyQt5 interface on any Xorg‑based Linux. Device images built with Buildroot are in progress." />
+  <meta name="author" content="Devesh Senthilraja" />
+  <meta property="og:title" content="WinterOS" />
+  <meta property="og:description" content="Minimal UI‑first Linux." />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="/winteros-social-card.png" /> -->
+  <meta property="og:url" content="https://Devesh-Senthilraja.github.io/WinterOS/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <style>
+    :root{
+      --bg:#E6E7EA; --panel:#F3F4F6; --panel-2:#FFFFFF; --ink:#2A2B2E; --ink-2:#646870; --chrome:#2F2F32; --muted:#D6D8DD; --ok:#2F8F79; --focus:#3A8BFF; --radius:18px; --shadow: 0 12px 30px rgba(0,0,0,.10);
+    }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#1F2125; --panel:#2A2C31; --panel-2:#2F3137; --ink:#ECEFF3; --ink-2:#9CA3AF; --chrome:#141416; --muted:#3A3D44; --ok:#6BE0C0; --focus:#6CB0FF; } }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+
+    header{position:sticky;top:0;z-index:20;}  
+    .nav{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--muted);background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,.25));border-radius:calc(var(--radius) + 6px);padding:10px 14px;box-shadow:var(--shadow);/* constrain blur to this rounded box */backdrop-filter: blur(8px) saturate(120%);-webkit-backdrop-filter: blur(8px) saturate(120%);overflow:hidden;isolation:isolate;background-clip:padding-box;}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand .dot{width:12px;height:12px;border-radius:999px;background:var(--chrome)}
+    .nav a{padding:8px 12px;border-radius:12px;border:1px solid transparent}
+    .nav a:hover{background:var(--panel);border-color:var(--muted)}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:16px;border:1px solid var(--muted);background:var(--panel);box-shadow:var(--shadow);text-decoration:none}
+    .btn.primary{background:var(--chrome);color:#fff;border-color:transparent}
+
+    .hero{min-height:78vh;display:flex;align-items:center;justify-content:center}
+    .wordmark{font-weight:900;font-size:clamp(44px,8vw,96px);letter-spacing:.5px;color:var(--ink);} 
+    .sub{margin-top:10px;color:var(--ink-2);font-size:18px;text-align:center}
+
+    .section{padding:56px 0}
+    .card{background:var(--panel);border:1px solid var(--muted);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    h2{margin:0 0 14px;font-size:clamp(24px,3vw,36px)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .two{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+    .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .shot{aspect-ratio:16/10;background:var(--panel-2);border:1px solid var(--muted);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--ink-2)}
+
+    .code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--panel-2);border:1px solid var(--muted);border-radius:14px;padding:14px;overflow:auto}
+    footer{padding:36px 0;color:var(--ink-2)}
+
+    @media (max-width:900px){ .features{grid-template-columns:1fr} .two{grid-template-columns:1fr} .shots{grid-template-columns:1fr 1fr} }
+  </style>
+</head>
+<body>
+  <header class="wrap" aria-label="Site chrome">
+    <div class="nav">
+      <div class="brand"></span><strong>WinterOS</strong></div>
+      <nav style="display:flex;gap:10px">
+        <a href="#what">What</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#try">Run it</a>
+        <a href="#shots">Screens</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="wordmark" aria-label="WinterOS wordmark">WinterOS</div>
+      <p class="sub">Minimal UI‑first Linux.</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section id="what" class="section">
+      <div class="two">
+        <div class="card">
+          <h2>What is WinterOS?</h2>
+          <p>WinterOS is a minimal, UI‑first Linux project designed for single-board computers. Today, you can run the UI on any Xorg‑based Linux system to try it out. Device images are being prepared.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn primary" href="https://github.com/Devesh-Senthilraja/WinterOS" rel="noopener">View on GitHub</a>
+            <a class="btn" href="#try">Run the UI on Linux</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Highlights</h2>
+          <ul style="margin:8px 0 0 18px">
+            <li><strong>PyQt5 on Xorg</strong> for predictable rendering and stable frames.</li>
+            <li><strong>Quick startup</strong> by preloading only minimal libraries at launch.</li>
+            <li><strong>Runs anywhere</strong> on Xorg‑based Linux. All UI code is open source.</li>
+          </ul>
+         <!-- <p style="color:var(--ink-2);font-size:14px;margin-top:8px">System‑level features (SSH, CLI, read‑only root) are part of the upcoming OS packaging, not the current UI preview.</p> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Features</h2>
+      <div class="features">
+        <div class="card"><h3>Smooth graphics</h3><p>UI built with PyQt5 running on Xorg for a simple, consistent & clean graphics stack.</p></div>
+        <div class="card"><h3>Fast startup</h3><p>Minimal dependencies and preloading of required libs so apps can appear quickly.</p></div>
+        <div class="card"><h3>Developer‑friendly</h3><p>Open‑source UI that runs on any Xorg‑based Linux. Clone & tweak it to your liking.</p></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="two">
+        <div class="card">
+          <h2>Roadmap: Packaging the OS</h2>
+          <p>Work is underway to <strong>package the UI as a complete OS</strong> using Buildroot and publish bootable images for Raspberry Pi boards. The first releases will prioritize fast boot and reliability.</p>
+          <ul style="margin:8px 0 0 18px">
+            <li>Buildroot pipeline and board configs</li>
+            <li>Signed images and release process</li>
+            <li>Performance notes and tuning guide</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Upcoming architecture</h2>
+          <div class="code" aria-label="Architecture sketch">
+Hardware → Linux kernel (fast boot) → Buildroot userspace → Winter UI (PyQt5/Xorg) → system tooling (SSH/CLI/updates)
+          </div>
+          <p style="color:var(--ink-2);font-size:14px;margin:8px 0 0">This section describes the planned OS architecture. The downloadable on GitHub today is the UI preview for Linux.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="try" class="section">
+      <div class="card">
+        <h2>Run the UI on Linux</h2>
+        <p>Recommended: create a Python virtual environment to isolate libraries.</p>
+        <pre class="code" aria-label="Quickstart">
+# 1) Clone
+git clone https://github.com/Devesh-Senthilraja/WinterOS
+cd WinterOS
+
+# 2) (Recommended) Use a venv
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# 3) Launch the UI
+python proxima_ui/main.py
+        </pre>
+        <p style="color:var(--ink-2);font-size:14px;margin-top:6px">Note: This runs the Winter UI on your Xorg Linux desktop/server.</p>
+      </div>
+    </section>
+
+    <section id="shots" class="section">
+      <h2>Screens</h2>
+      <div class="shots">
+        <div class="shot">home-ui.png</div>
+        <div class="shot">browser.png</div>
+        <div class="shot">maps.png</div>
+      </div>
+      <div class="card" style="margin-top:10px">
+         <div class="code">&lt;img src="/assets/home-ui.png" alt="Winter Home UI" width="1200" height="750" loading="lazy" /&gt;
+&lt;img src="/assets/browser.png" alt="Browser window" width="1200" height="750" loading="lazy" /&gt;
+&lt;img src="/assets/maps.png" alt="Settings" width="1200" height="750" loading="lazy" /&gt;</div> 
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>FAQ</h2>
+      <div class="two">
+        <div class="card"><h3>Is the OS image available?</h3><p>Not yet. Images are being prepared with Buildroot for Raspberry Pi boards. For now, you can run the UI on Linux.</p></div>
+        <div class="card"><h3>Why Xorg?</h3><p>PyQt5 on Xorg provides a mature, predictable stack and works across a wide range of Linux environments.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card">
+        <h2>Contact</h2>
+        <ul style="list-style:none;padding-left:0;margin:8px 0 0">
+          <li><strong>GitHub:</strong> <a href="https://github.com/Devesh-Senthilraja" rel="noopener">github.com/Devesh-Senthilraja</a></li>
+          <li><strong>Project repo:</strong> <a href="https://github.com/Devesh-Senthilraja/WinterOS" rel="noopener">github.com/Devesh-Senthilraja/WinterOS</a></li>
+          <li><strong>Email:</strong> <a href="mailto:hello@your-domain.tld">hello@your-domain.tld</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="card" style="display:flex;gap:12px;justify-content:space-between;align-items:center">
+        <div>© <span id="year"></span> WinterOS</div>
+        <div style="display:flex;gap:10px">
+          <a class="btn" href="https://github.com/Devesh-Senthilraja/WinterOS" rel="noopener">GitHub</a>
+          <a class="btn" href="#roadmap">Roadmap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
